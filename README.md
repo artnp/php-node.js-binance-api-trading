@@ -6,7 +6,7 @@
 วิธีติดตั้ง
 - ลง php server เช่น  AMPPS
 - ลง Node.js
-- 
+
 - รันติดตั้งแพคเกจดังนี้
 - npm init -y
 - npm i node-localstorage
