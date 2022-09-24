@@ -6,12 +6,13 @@
 วิธีติดตั้ง
 - ลง php server เช่น  AMPPS
 - ลง Node.js
+- 
 - รันติดตั้งแพคเกจดังนี้
-npm init -y
-npm i node-localstorage
-npm i xmlhttprequest
-npm i axios
-npm i cheerio
+- npm init -y
+- npm i node-localstorage
+- npm i xmlhttprequest
+- npm i axios
+- npm i cheerio
 
 แก้ไขไฟล์ buy.js
 - บรรทัด 6-7 ใส่ api binance
