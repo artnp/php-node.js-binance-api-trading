@@ -1,0 +1,117 @@
+body {
+font-family: "Lucida Console", "Courier New", monospace;
+color: white;
+}
+.button{
+    font-weight : bold ;
+    border-radius: 9 ;
+}
+table {
+    border-collapse: collapse;
+  }
+hr { display: block; height: 1px;
+    border: 0; border-top: 2px solid rgb(68, 68, 68);
+    margin: 1em 0; padding: 0; }
+#res4, #stop, #cutloss, #res3 {
+    opacity: 0.4;
+}
+#res001, #res2, .links {
+    opacity: 0.6;
+}
+.links {
+    opacity: 0.9;
+}
+#res6, #res11, #res, #cutlossA {
+    opacity: 0.8;
+}
+#res4:hover, #stop:hover, #cutloss:hover, #res3:hover, #res001:hover, #res2:hover, #res6:hover, #res:hover, #res11:hover, #cutlossA:hover, .links:hover {
+    opacity: 100;
+}
+#cryptosub:hover {
+color: white;
+background-color:grey;
+}
+.container{
+width: 320px;
+height: 15px;
+background: grey;
+}
+.progressbar{
+width: 0%;
+height: 15px;
+background-image: linear-gradient(to right, green , #1CE23F);
+}
+.button-buy {
+appearance: none;
+background-color: #11DC1C;
+border-radius: 40em;
+border-style: none;
+box-shadow: #26B20A 0 -12px 6px inset;
+box-sizing: border-box;
+color: #000000;
+cursor: pointer;
+display: inline-block;
+font-family: -apple-system,sans-serif;
+font-size: 1.2rem;
+font-weight: 700;
+letter-spacing: -.24px;
+margin: 0;
+outline: none;
+quotes: auto;
+text-align: center;
+text-decoration: none;
+transition: all .15s;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+
+.button-sellnow {
+appearance: none;
+background-color: #F71E1E;
+border-radius: 40em;
+border-style: none;
+box-shadow: #C51D1D 0 -12px 6px inset;
+box-sizing: border-box;
+color: #E9F0E8;
+cursor: pointer;
+display: inline-block;
+font-family: -apple-system,sans-serif;
+font-size: 1.2rem;
+font-weight: 700;
+letter-spacing: -.24px;
+margin: 0;
+outline: none;
+quotes: auto;
+text-align: center;
+text-decoration: none;
+transition: all .15s;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+.button-buy:hover {
+transform: scale(1.125);
+}
+.button-sellnow:hover {
+transform: scale(1.125);
+}
+.button-openorder:hover {
+transform: scale(1.125);
+}
+@media (min-width: 208px) {
+.button-buy {
+font-size: 20px;
+padding: .1rem 2rem;
+}
+@media (min-width: 208px) {
+.button-sellnow {
+font-size: 20px;
+padding: .1rem 2rem;
+}
+@media (min-width: 208px) {
+.button-openorder {
+font-size: 20px;
+padding: .1rem 2rem;
+}
+}}}

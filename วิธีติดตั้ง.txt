@@ -1,0 +1,22 @@
+- ลง php server เช่น  AMPPS
+- ลง Node.js
+- รันติดตั้งแพคเกจดังนี้
+npm init -y
+npm i node-localstorage
+npm i xmlhttprequest
+npm i axios
+npm i cheerio
+
+แก้ไขไฟล์ buy.js
+- บรรทัด 6-7 ใส่ api binance
+- บรรทัด 8 ใส่ค่าธรรมเนียมเทรด  
+var fee = 0.075; 
+
+- โฟเดอร์ scratch
+แก้ไขไฟล์ข้างไฟล์ symbol เป็นเหรียญ BTC หรือสกุลที่จะเทรด
+
+- คู่เหรียญเทรดคือ BUSD หากจะแก้เข้าไปแก้ไขในไฟล์ดังนี้
+buy.js
+index.js
+sellnow.js
+sellmarket.js
