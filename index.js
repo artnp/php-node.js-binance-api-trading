@@ -62,7 +62,7 @@ ws.onmessage = (event) => {
 	}
 	RealTimeProfit = (((lastPrice - average)*executed) - (((lastPrice - average)*executed)*fee)).toFixed(2);
 
-		if (((RealTimeProfit*100)/total).toFixed(2) >= 0.01) {
+		if (((RealTimeProfit*100)/total).toFixed(2) >= (fee*2)) {
 		document.title = "✔ ---ชนะแล้วววว  💲💲💲";
 		document.getElementById("showgif").innerHTML= "<img src='img/money.gif' width='25%'>"
 } else if ((((((lastPrice - average)*executed) - (((lastPrice - average)*executed)*fee))*100)/total).toFixed(1) < -1) {
@@ -80,7 +80,7 @@ else if (realproF  < 0) {
 	   res5usd = (res5 * lastPrice);
 	   ProfitNowThen = (realproF * lastPrice).toFixed(2);
 	   document.getElementById("res12").innerHTML =  ((RealTimeProfit*100)/total).toFixed(2) + " %"
-	   if ((RealTimeProfit*100)/total >= 0.01) {
+	   if ((RealTimeProfit*100)/total >= (fee*2)) {
     document.getElementById("res12").style.color = '#14CA7E';
 	}
 	else {
