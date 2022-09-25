@@ -1,6 +1,6 @@
 # PHP+Node.js-Binance-API-Crypto-Trading
 สคริปต์เทรดคริปโต PHP+Node.js Binance API
-[1_fhNl4U1PQM2XJyf3yYmqfA](https://user-images.githubusercontent.com/99397593/192134992-04a2bd35-ba42-44f4-bfc0-ea91aee94905.gif)
+![Uploading 1_fhNl4U1PQM2XJyf3yYmqfA.gif…]()
 
 ใช้ API จาก Binance เป็นตัวเทรด กดซื้อกดขายผ่านหน้าเว็บด้วยความเร็วสูงเห็นค่ากำไร-ขาดทุนได้เลยทันที ไม่ต้องไปเปิดหน้า exchage โหลดวางราคาให้เสียเวลา
 ____________________________________________________
