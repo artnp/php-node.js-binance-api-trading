@@ -19,6 +19,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
     localStorage['Executed'] = 0;
     localStorage['Total'] = 0;
     localStorage['executedfee'] = 0;
+    localStorage['executedfee_backup'] = 0;
     
     	//หน่วงเวลา
   async function delay(delayInms) {
@@ -68,7 +69,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
     ourData2 = JSON.parse(ourRequest2.responseText); 
     localStorage['Executed'] = parseFloat(ourData2.executedQty);
     localStorage['Total'] = parseFloat(ourData2.cummulativeQuoteQty);
-    console.log(ourData2.fills[0].price)
+    // console.log(ourData2.fills[0].price)
     }
     ourRequest2.send();
 
@@ -102,6 +103,7 @@ var countDecimals = function(value) {
     var decimalcovert = Number(stringde[stringde.length - 1]) ;  //ใส่  -1 ต่อท้าย  กรณีขายมีปัญหาแก้บรรทัดนี้ executed -1 เกิน ***********
     var lastDecimalMinusOne = stringde.slice(0, -1) + decimalcovert;
     localStorage['executedfee'] = lastDecimalMinusOne; 
+    localStorage['executedfee_backup'] = lastDecimalMinusOne; 
 
       }
       slowdown();

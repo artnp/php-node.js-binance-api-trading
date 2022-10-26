@@ -36,7 +36,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 
     //ขายราคาตลาด
     var endPoint2 = "/api/v3/order";
-    var dataQueryString2 = "symbol=" + localStorage['symbol'] + "BUSD&side=SELL&type=MARKET&quantity=" + localStorage['Executed'] + "&timestamp=" + Date.now(); //ค่าธรรมเนียมแก้เป็น executedfee
+    var dataQueryString2 = "symbol=" + localStorage['symbol'] + "BUSD&side=SELL&type=MARKET&quantity=" + localStorage['executedfee_backup'] + "&timestamp=" + Date.now(); //ค่าธรรมเนียมแก้เป็น executedfee
     var signature2 = crypto.createHmac('sha256',keys['skey']).update(dataQueryString2).digest('hex');
     var url2 = burl + endPoint2 + '?' + dataQueryString2 + '&signature=' + signature2;
     var ourRequest2 = new XMLHttpRequest();
@@ -44,7 +44,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
     ourRequest2.setRequestHeader('X-MBX-APIKEY', keys['akey']);
     ourRequest2.onload = function(){
       ourData2 = JSON.parse(ourRequest2.responseText);
-      console.log('คำสั่งขายราคาตลาดสำเร็จ');
+      // console.log('คำสั่งขายราคาตลาดสำเร็จ');
     }
     ourRequest2.send();
 
@@ -52,7 +52,6 @@ if (typeof localStorage === "undefined" || localStorage === null) {
     localStorage['Executed'] = 0;
     localStorage['Total'] = 0;
     localStorage['executedfee'] = 0;
-
     }
     slowdown();
 

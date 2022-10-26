@@ -48,21 +48,21 @@ if (typeof localStorage === "undefined" || localStorage === null) {
     }
     ourRequest4.send();
 
-    await delay(200); //หน่วงเวลา
+    // await delay(200); //หน่วงเวลา
 
-    //// ยอดเงินคงเหลือ
-    var endPoint3 = '/api/v3/account';
-    var dataQueryString3 = 'timestamp=' + Date.now();
-    var signature3 = crypto.createHmac('sha256',keys['skey']).update(dataQueryString3).digest('hex');
-    var url3 = burl + endPoint3 + '?' + dataQueryString3 + '&signature=' + signature3;
-    var ourRequest3 = new XMLHttpRequest();
-    ourRequest3.open('GET',  url3 , true);
-    ourRequest3.setRequestHeader('X-MBX-APIKEY', keys['akey']);
-    ourRequest3.onload = function(){
-    ourData3 = JSON.parse(ourRequest3.responseText);
-    console.log( ourData3.balances[188].free + ' $');
-    }
-    ourRequest3.send();
+    // //// ยอดเงินคงเหลือ
+    // var endPoint3 = '/api/v3/account';
+    // var dataQueryString3 = 'timestamp=' + Date.now();
+    // var signature3 = crypto.createHmac('sha256',keys['skey']).update(dataQueryString3).digest('hex');
+    // var url3 = burl + endPoint3 + '?' + dataQueryString3 + '&signature=' + signature3;
+    // var ourRequest3 = new XMLHttpRequest();
+    // ourRequest3.open('GET',  url3 , true);
+    // ourRequest3.setRequestHeader('X-MBX-APIKEY', keys['akey']);
+    // ourRequest3.onload = function(){
+    // ourData3 = JSON.parse(ourRequest3.responseText);
+    // console.log( ourData3.balances[188].free + ' $');
+    // }
+    // ourRequest3.send();
 
     localStorage['askPrice'] = 0;
     localStorage['Executed'] = 0;
