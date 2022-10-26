@@ -1,5 +1,5 @@
 //คำนวณราคานำเข้าจาก data storage [Node.js]
-document.getElementById('cryptologo').innerHTML="{" +"<img src='https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/128/color/"+ localStorage.getItem("symbol").toLowerCase() + ".png' width='8%'>"+"}"
+document.getElementById('cryptologo').innerHTML="{" +"<img src='https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/128/color/btc.png' width='8%'>"+"}"
 var AverageCrypto = localStorage.getItem("askPrice");
 var ExecutedCrypto = localStorage.getItem("executed");
 var ExecutedCryptoSaving = localStorage.getItem("executedSaving");
@@ -34,7 +34,7 @@ document.getElementById('res').innerHTML=total.toFixed(1);
 
 ///////////ดึง API ราคา Real time
 const getBtcData = async () => {
-	fetch("https://api.binance.com/api/v1/ticker/24hr?symbol=" + (localStorage.getItem("symbol")).toUpperCase() + "BUSD")
+	fetch("https://api.binance.com/api/v1/ticker/24hr?symbol=BTCBUSD")
    .then(response => response.json())
    .then(data => {
 	lastPrice = Number(data.askPrice)
