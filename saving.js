@@ -46,6 +46,15 @@ const getBtcData = async () => {
 		 document.getElementById('resnowday').innerHTML= "<b>" + resnowday.toFixed(1); + "</b>"
 
 	RealTimeProfit = (((lastPrice - average)*ExecutedCryptoSaving) - (((lastPrice - average)*ExecutedCryptoSaving)*fee)).toFixed(2);
+	// ปุ่มพากันหาย
+if (average === 0 && total === 0){
+	document.getElementById('ssbutton').style.display = 'none';
+} else if (realproF < 10){
+	document.getElementById('bbbutton').style.display = 'none';
+} else {
+	document.getElementById('bbbutton').style.display = 'none';
+	document.getElementById('ssbutton').style.display = 'none';
+}
 
 		if (realproF > 10) {
 		document.getElementById("showgif").innerHTML= "<img src='img/money.gif' width='25%'>"
@@ -76,15 +85,7 @@ else if (realproF  < 0) {
 			else {
     document.getElementById("realproF").style.color = '#FA2727';
 			}
-// ปุ่มพากันหาย
-if (average === 0 && total === 0){
-	document.getElementById('ssbutton').style.display = 'none';
-} else if (realproF < 10){
-	document.getElementById('bbbutton').style.display = 'none';
-} else {
-	document.getElementById('bbbutton').style.display = 'none';
-	document.getElementById('ssbutton').style.display = 'none';
-}
+
 
 
 

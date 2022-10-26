@@ -52,6 +52,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
     localStorage['Executed'] = 0;
     localStorage['Total'] = 0;
     localStorage['executedfee'] = 0;
+    localStorage['executedSaving'] = 0;
     }
     slowdown();
 
