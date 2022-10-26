@@ -55,10 +55,10 @@ const getBtcData = async () => {
 	document.getElementById("showgif").innerHTML= ""
 }
 if (realproF >= 0) {
-		document.title = "✔ฟันกำไรไป:---- " + ((RealTimeProfit*100)/total).toFixed(2) + "% ----";
+		document.title = "✔ฟันกำไร:-- " + ((RealTimeProfit*100)/total).toFixed(2) + "% --";
 }
 else if (realproF  < 0) {
-	document.title = "❌ขาดทุนไป:---- " + ((RealTimeProfit*100)/total).toFixed(2) + "% ----";
+	document.title = "❌ขาดทุน:-- " + ((RealTimeProfit*100)/total).toFixed(2) + "% --";
 }
 	   document.getElementById("realproF").innerHTML = realproF+"$";
 	   res5usd = (res5 * lastPrice);
