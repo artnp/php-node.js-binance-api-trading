@@ -58,7 +58,7 @@ if (average === 0 && total === 0){
 
 		if (realproF > 10) {
 		document.getElementById("showgif").innerHTML= "<img src='img/money.gif' width='25%'>"
-} else if (realproF < 10) {
+} else if (realproF < 10 && realproF > 0) {
 	document.getElementById("showgif").innerHTML= "<img src='img/sell.gif' width='20%'>"
 } else {
 	document.getElementById("showgif").innerHTML= ""
