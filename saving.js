@@ -42,7 +42,7 @@ const getBtcData = async () => {
 		// แสดงผลราคาคริปโต Real-time
 		document.getElementById("info").innerHTML = (lastPrice).toFixed(0)
 		resnowday = lastPrice*ExecutedCryptoSaving
-		realproF = (Number(resnowday-total)).toFixed(1)
+		realproF = (Number(resnowday-total)).toFixed(0)
 		 document.getElementById('resnowday').innerHTML= "<b>" + resnowday.toFixed(1); + "</b>"
 
 	RealTimeProfit = (((lastPrice - average)*ExecutedCryptoSaving) - (((lastPrice - average)*ExecutedCryptoSaving)*fee)).toFixed(2);
