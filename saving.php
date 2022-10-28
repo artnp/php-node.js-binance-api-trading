@@ -16,7 +16,7 @@ localStorage.setItem("askPrice", "<?php $askPrice = fopen('scratch/askPrice','r'
 localStorage.setItem("executedSaving", "<?php $executed = fopen('scratch/executedSaving','r');echo fgets($executed);fclose($executed);?>");
 localStorage.setItem("Total", "<?php $Total = fopen('scratch/Total','r');echo fgets($Total);fclose($Total);?>");
 </script>
-<center><a href="index.php">Real-Time trading</a></center>
+<center><a href="index.php">Real-Time trading</a>
 <br>
 <br><br><br>
 <center>
@@ -54,12 +54,30 @@ localStorage.setItem("Total", "<?php $Total = fopen('scratch/Total','r');echo fg
 		 <td><font color="yellow"><u><div id='res' style='user-select: all; cursor: pointer;'></div></u></font></td>
 		 <td><font color="white"><u><div id='resnowday' style='user-select: all; cursor: pointer;'></div></u></font></td>
 		 </tr></tbody></table>
-
-		</center><center>
-<hr>
-
-
-
+		</center>
+		<center>
+<hr><!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div> <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  {
+  "symbols": [
+      {
+      "description": "",
+      "proName": "CAPITALCOM:DXY"
+    },
+    {
+      "description": "",
+      "proName": "BINANCE:BTCBUSD"
+    }
+  ],
+  "colorTheme": "dark",
+  "isTransparent": true,
+  "showSymbolLogo": true,
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
 		<table style="background-color: #1D1D1D"><td><center>กำไร<font size='10'><div id="realproF"></div></font></center>
 		<div id="bbbutton"><center><input type="submit" name="buy" class="button-buy" value="ช้อนซื้อ🚀"/></center></div>
 		<div id="ssbutton"><center><input type="submit" name="sellmarket" class="button-sellnow" value="💡 เทขาย"/></center></div>

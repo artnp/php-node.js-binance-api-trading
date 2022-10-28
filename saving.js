@@ -47,13 +47,13 @@ const getBtcData = async () => {
 
 	RealTimeProfit = (((lastPrice - average)*ExecutedCryptoSaving) - (((lastPrice - average)*ExecutedCryptoSaving)*fee)).toFixed(2);
 	// ปุ่มพากันหาย
-if (total > 1){
-	document.getElementById('bbbutton').style.display = 'none';
-} else if (realproF < 10){
+if (total === NaN || total === 0){
 	document.getElementById('ssbutton').style.display = 'none';
-}else if (total === NaN){
+	} else if (total > 1){
 	document.getElementById('bbbutton').style.display = 'none';
-}
+    } else if (realproF > 10){
+	document.getElementById('ssbutton').style.display = 'none';
+} 
 
 		if (realproF > 10) {
 		document.getElementById("showgif").innerHTML= "<img src='img/money.gif' width='25%'>"
