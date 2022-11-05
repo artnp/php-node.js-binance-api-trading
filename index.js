@@ -4,6 +4,7 @@ var AverageCrypto = localStorage.getItem("askPrice");
 var ExecutedCrypto = localStorage.getItem("executed");
 var TotalCrypto = localStorage.getItem("Total");
 var ocoPercent = localStorage.getItem("ocoPercent");
+var ExecutedCryptoSaving = localStorage.getItem("executedSaving");
 
 //คำนวณค่าคณิตศาสตร์
 var cryptoName = localStorage.getItem("symbol");
@@ -24,12 +25,12 @@ var stop = Number((((limit-average)*executed)-(total*fee))).toFixed(5);
 // แสดงผลคำนวณ % ขาดทุน คงเหลือ oco
 
 document.getElementById('res001').innerHTML=cryptoName + ":" + "BUSD";
-document.getElementById('res').innerHTML=total;
-document.getElementById('res2').innerHTML=executed;
-document.getElementById('res3').innerHTML=average;
+document.getElementById('res').innerHTML=total.toFixed(1);
+document.getElementById('res2').innerHTML=Number(ExecutedCryptoSaving).toFixed(4);
+document.getElementById('res3').innerHTML=average.toFixed(0);
 
 
-document.getElementById('externallinks').innerHTML="<a href='https://www.tradingview.com/chart/?symbol=BINANCE:" + cryptoName + "BUSD" +  "\' target=\'_blank\' class='links'><img src='img/tradingview.png' width='7%'>" + "</a> * <a href='https://www.binance.com/en/convert?fromCoin=" + cryptoName  +  "\' target=\'_blank\' class='links'><img src='img/binance.png' width='7%'>" + "</a>";
+document.getElementById('externallinks').innerHTML="<a href='https://www.binance.com/en/my/orders/exchange/openorder" +  "\' target=\'_blank\' class='links'><img src='img/tradingview.png' width='5%'>" + "</a> * <a href='https://www.binance.com/en/convert?fromCoin=" + cryptoName  +  "\' target=\'_blank\' class='links'><img src='img/binance.png' width='7%'>" + "</a>";
 
 
 ///////////ดึง API ราคา Real time
@@ -47,11 +48,13 @@ ws.onmessage = (event) => {
 		// แสดงผลราคาคริปโต Real-time
 		document.getElementById("info").innerHTML = (lastPrice).toFixed(0)
 		realproF = (((lastPrice - average)*executed) - (((lastPrice - average)*executed)*fee)).toFixed(2);
+		resnowday = lastPrice*ExecutedCryptoSaving
+		document.getElementById('resnowday').innerHTML= "<b>" + resnowday.toFixed(2); + "</b>"
 
 		//ดึงราคาจากตาทิพย์
 		godeyes = parseFloat(localStorage.getItem("priceprediction"))
 		document.getElementById("godeyescookie").innerHTML = godeyes
-	document.getElementById("godeyes").innerHTML =  "[" +  (godeyes-lastPrice).toFixed(0) + "]"
+	document.getElementById("godeyes").innerHTML =  "" +  (100-((lastPrice*100)/godeyes)).toFixed(1) + "%"
 
 	
 	
@@ -62,7 +65,7 @@ ws.onmessage = (event) => {
 	}
 	RealTimeProfit = (((lastPrice - average)*executed) - (((lastPrice - average)*executed)*fee)).toFixed(2);
 
-		if (((RealTimeProfit*100)/total).toFixed(2) >= (fee*2)) {
+		if (((RealTimeProfit*100)/total).toFixed(2) >= 0.02) {
 		document.title = "✔ ---ชนะแล้วววว  💲💲💲";
 		document.getElementById("showgif").innerHTML= "<img src='img/money.gif' width='25%'>"
 } else if ((((((lastPrice - average)*executed) - (((lastPrice - average)*executed)*fee))*100)/total).toFixed(1) < -1) {
@@ -87,6 +90,9 @@ else if (realproF  < 0) {
     document.getElementById("res12").style.color = 'grey';
 	}
        var percentage = ((ProfitNowThen*100)/res5usd);
+	   if (percentage > 100){
+		percentage = 100
+	   }
 $(".progressbar").animate({
 	  width: percentage + "%"
 },100);
