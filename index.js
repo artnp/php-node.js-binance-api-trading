@@ -30,6 +30,7 @@ document.getElementById('res2').innerHTML=Number(ExecutedCryptoSaving).toFixed(4
 document.getElementById('res3').innerHTML=average.toFixed(0);
 
 
+
 document.getElementById('externallinks').innerHTML="<a href='https://www.binance.com/en/my/orders/exchange/openorder" +  "\' target=\'_blank\' class='links'><img src='img/tradingview.png' width='5%'>" + "</a> * <a href='https://www.binance.com/en/convert?fromCoin=" + cryptoName  +  "\' target=\'_blank\' class='links'><img src='img/binance.png' width='7%'>" + "</a>";
 
 
@@ -47,8 +48,12 @@ ws.onmessage = (event) => {
 
 		// แสดงผลราคาคริปโต Real-time
 		document.getElementById("info").innerHTML = (lastPrice).toFixed(0)
-		realproF = (((lastPrice - average)*executed) - (((lastPrice - average)*executed)*fee)).toFixed(2);
+		
+		
 		resnowday = lastPrice*ExecutedCryptoSaving
+
+		realproF = ((resnowday-total)-((resnowday-total)*fee)).toFixed(2);
+		// realproF = (((lastPrice - average)*executed) - (((lastPrice - average)*executed)*fee)).toFixed(2);
 		document.getElementById('resnowday').innerHTML= "<b>" + resnowday.toFixed(2); + "</b>"
 
 		//ดึงราคาจากตาทิพย์
